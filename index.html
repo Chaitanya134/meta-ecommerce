@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>A-Frame Practice</title>
+  <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+</head>
+
+<a-scene>
+  <a-assets>
+    <img id="sky" src="stars.jpg">
+    <img id="brick-wall" src="brick.jpg">
+    <img id="beige-wall" src="beige.jpg">
+    <img id="floor" src="floor.jpg">
+    <a-asset-item id="avatar" src="avatar.glb"></a-asset-item>
+    <a-asset-item id="lamp" src="lamp.gltf"></a-asset-item>
+  </a-assets>
+  <!-- <a-sky src="#sky"></a-sky> -->
+  <a-entity environment="preset: forest"></a-entity>
+
+  <!-- Shop 1 -->
+  <a-entity id="shop1" position="0 1 0">
+  <a-entity gltf-model="#avatar" position="0 -1 -2"></a-entity>
+    <a-box src="#brick-wall" repeat="2 2" position="-1 1 -4" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="3 1 -4" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="7 1 -4" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="9 1 -2" rotation="0 -90 0" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="9 1 2" rotation="0 -90 0" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="-1 1 4" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="3 1 4" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="7 1 4" height="4" width="4" depth="0.2"></a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="-3 1 -2" rotation="0 -90 0" height="4" width="4" depth="0.2">
+    </a-box>
+    <a-box src="#brick-wall" repeat="2 2" position="-3 1 2" rotation="0 -90 0" height="4" width="4" depth="0.2"></a-box>
+    <a-plane src="#floor" position="3 -0.999 0" rotation="-90 0 0" width="12" height="8"></a-plane>
+    <a-box src="#beige-wall" position="3 3 0" height="0.1" width="12" depth="8"></a-box>
+    
+    <!-- light -->
+    <a-entity gltf-model="#lamp" position="-0.2 1.4 -3.85" scale="1.5 1.5 1.5">
+      <a-light type="point" distance="4" position="0 0.2 0.1" color="beige"></a-light>
+    </a-entity>
+    <a-entity gltf-model="#lamp" position="6.2 1.4 -3.85" scale="1.5 1.5 1.5">
+      <a-light type="point" distance="4" position="0 0.2 0.1" color="beige"></a-light>
+    </a-entity>
+    <a-entity gltf-model="#lamp" position="-0.2 1.4 3.85" rotation="0 -180 0" scale="1.5 1.5 1.5">
+      <a-light type="point" distance="4" position="0 0.2 0.1" color="beige"></a-light>
+    </a-entity>
+    <a-entity gltf-model="#lamp" position="6.2 1.4 3.85" rotation="0 -180 0" scale="1.5 1.5 1.5">
+      <a-light type="point" distance="4" position="0 0.2 0.1" color="beige"></a-light>
+    </a-entity>
+  </a-entity>
+</a-scene>
+
+</html>
